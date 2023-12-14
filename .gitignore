@@ -27,6 +27,9 @@
 # lzma host util
 host_util/lzma/lzma
 
+# OpenWrt toolchain
+openwrt-*
+
 #
 # Top-level generic files
 #
