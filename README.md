@@ -88,6 +88,7 @@ Currently supported devices:
 - **Atheros AR9341**:
   - EnGenius ENS202EXT
   - Kisslink NB1210
+  - LEMON WR-9341
   - TP-Link TL-MR3420 v2
   - TP-Link TL-WA801ND v2
   - TP-Link TL-WA830RE v2
@@ -165,6 +166,7 @@ More information about supported devices:
 | Hak5 Packet Squirrel | AR9331 | 16 MiB | 64 MiB DDR2 | 128 KiB | R/W |
 | Hak5 WiFi Pineapple NANO | AR9331 | 16 MiB | 64 MiB DDR2 | 128 KiB | R/W |
 | Kisslink NB1210 | AR9341 | 8 MiB | 64 MiB DDR | 256 KiB | R/W |
+| LEMON WR-9341 | AR9341 | 8 MiB | 64 MiB DDR2 | 256 KiB | R/W |
 | P&W CPE505N | QCA9531 | 16 MiB | 64 MiB DDR2 | 256 KiB | R/W |
 | P&W R602N | QCA9531 | 16 MiB | 64 MiB DDR2 | 256 KiB | R/W |
 | [TP-Link TL-MR10U v1](http://wiki.openwrt.org/toh/tp-link/tl-mr10u) | AR9331 | 4 MiB | 32 MiB DDR1 | 64 KiB, LZMA | RO |

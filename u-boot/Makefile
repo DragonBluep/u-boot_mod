@@ -574,6 +574,13 @@ kisslink_nb1210: ar934x_common
 	@$(call define_add,CFG_AG7240_NMACS,2)
 	@$(MKCONFIG) -a db12x mips mips db12x ar7240 ar7240
 
+lemon_wr-9341: ar934x_common
+	@$(call config_init,LEMON WR-9341,wr9341,8,17,1,QCA_AR9341_SOC)
+	@$(call define_add,CONFIG_FOR_LEMON_WR9341,1)
+	@$(call define_add,CFG_ATHRS27_PHY,1)
+	@$(call define_add,CFG_AG7240_NMACS,2)
+	@$(MKCONFIG) -a db12x mips mips db12x ar7240 ar7240
+
 p2w_cpe505n: qca953x_common
 	@$(call config_init,P&W CPE505N,cpe505n,16,17,1,QCA_QCA9531_SOC)
 	@$(call define_add,CONFIG_FOR_P2W_CPE505N,1)
