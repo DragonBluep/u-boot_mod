@@ -565,6 +565,15 @@ hak5_wifi-pineapple-nano: ar933x_common
 	@$(call define_add,CONFIG_FOR_HAK5_WIFI_PINEAPPLE_NANO,1)
 	@$(MKCONFIG) -a ap121 mips mips ap121 ar7240 ar7240
 
+kisslink_nb1210: ar934x_common
+	@$(call config_init,Kisslink NB1210,nb1210,8,1,1,QCA_AR9341_SOC)
+	@$(call define_add,CONFIG_FOR_KISSLINK_NB1210,1)
+	@$(call define_add,CONFIG_USB,1)
+	@$(call define_add,CONFIG_QCA_ETH_PHY_SWAP,1)
+	@$(call define_add,CFG_ATHRS27_PHY,1)
+	@$(call define_add,CFG_AG7240_NMACS,2)
+	@$(MKCONFIG) -a db12x mips mips db12x ar7240 ar7240
+
 p2w_cpe505n: qca953x_common
 	@$(call config_init,P&W CPE505N,cpe505n,16,17,1,QCA_QCA9531_SOC)
 	@$(call define_add,CONFIG_FOR_P2W_CPE505N,1)

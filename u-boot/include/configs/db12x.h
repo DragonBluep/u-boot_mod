@@ -37,6 +37,15 @@
 
 	#define CONFIG_QCA_GPIO_MASK_LED_ACT_L	GPIO13 | GPIO14
 
+#elif defined(CONFIG_FOR_KISSLINK_NB1210)
+
+	#define CONFIG_QCA_GPIO_MASK_LED_ACT_L	GPIO18
+	#define CONFIG_QCA_GPIO_MASK_IN		GPIO0 | GPIO1 | GPIO2 | GPIO3 |\
+						GPIO4 | GPIO11 | GPIO13 | GPIO14 |\
+						GPIO15 | GPIO16 | GPIO17 | GPIO19 |\
+						GPIO20 | GPIO21 | GPIO22
+	#define CONFIG_QCA_GPIO_MASK_OUT_INIT_L	GPIO12
+
 #elif defined(CONFIG_FOR_TPLINK_MR3420_V2)
 
 	#define CONFIG_QCA_GPIO_MASK_LED_ACT_L	GPIO11 | GPIO12 | GPIO13 |\
@@ -110,6 +119,12 @@
 				"rootfstype=squashfs init=/sbin/init "\
 				"mtdparts=ath-nor0:256k(u-boot),64k(u-boot-env),16000k(firmware),64k(art)ro"
 
+#elif defined(CONFIG_FOR_KISSLINK_NB1210)
+
+	#define CONFIG_BOOTARGS	"console=ttyS0,115200 root=31:02 "\
+				"rootfstype=jffs2,squashfs init=/sbin/init "\
+				"mtdparts=spi0.0:256k(u-boot),64k(u-boot-env),7808k(firmware),64k(art)"
+
 #elif defined(CONFIG_FOR_TPLINK_WDR3500_V1) ||\
       defined(CONFIG_FOR_TPLINK_WDR3600_V1) ||\
       defined(CONFIG_FOR_TPLINK_WDR43X0_V1)
@@ -146,7 +161,8 @@
 
 	#define CFG_LOAD_ADDR		0x9F0A0000
 
-#elif defined(CONFIG_FOR_GLINET_GL_AR300)
+#elif defined(CONFIG_FOR_GLINET_GL_AR300)       ||\
+      defined(CONFIG_FOR_KISSLINK_NB1210)
 
 	#define CFG_LOAD_ADDR		0x9F050000
 
@@ -172,7 +188,8 @@
 	#define CFG_ENV_ADDR		0x9F060000
 	#define CFG_ENV_SIZE		0x10000
 
-#elif defined(CONFIG_FOR_ENGENIUS_ENS202EXT)
+#elif defined(CONFIG_FOR_ENGENIUS_ENS202EXT)    ||\
+      defined(CONFIG_FOR_KISSLINK_NB1210)
 
 	#define CFG_ENV_ADDR		0x9F040000
 	#define CFG_ENV_SIZE		0x10000
@@ -224,6 +241,12 @@
 	#define OFFSET_MAC_DATA_BLOCK		0xFF0000
 	#define OFFSET_MAC_DATA_BLOCK_LENGTH	0x010000
 	#define OFFSET_MAC_ADDRESS		0x000000
+
+#elif defined(CONFIG_FOR_KISSLINK_NB1210)
+
+	#define OFFSET_MAC_DATA_BLOCK		0x7F0000
+	#define OFFSET_MAC_DATA_BLOCK_LENGTH	0x010000
+	#define OFFSET_MAC_ADDRESS		0x000008
 
 #else
 
@@ -287,7 +310,8 @@
 
 	#define WEBFAILSAFE_UPLOAD_LIMITED_AREA_IN_BYTES	(2752 * 1024)
 
-#elif defined(CONFIG_FOR_GLINET_GL_AR300)
+#elif defined(CONFIG_FOR_GLINET_GL_AR300)       ||\
+      defined(CONFIG_FOR_KISSLINK_NB1210)
 
 	#define WEBFAILSAFE_UPLOAD_LIMITED_AREA_IN_BYTES	(384 * 1024)
 
@@ -318,6 +342,11 @@
 	#define CONFIG_QCA_PLL_IN_FLASH_BLOCK_OFFSET	0x40000
 	#define CONFIG_QCA_PLL_IN_FLASH_BLOCK_SIZE	0x10000
 
+#elif defined(CONFIG_FOR_KISSLINK_NB1210)
+
+	#define CONFIG_QCA_PLL_IN_FLASH_BLOCK_OFFSET	0x30000
+	#define CONFIG_QCA_PLL_IN_FLASH_BLOCK_SIZE	0x10000
+
 #elif defined(CONFIG_FOR_TPLINK_MR3420_V2)  ||\
       defined(CONFIG_FOR_TPLINK_WA801ND_V2) ||\
       defined(CONFIG_FOR_TPLINK_WA830RE_V2) ||\
@@ -341,6 +370,7 @@
 #if !defined(CONFIG_FOR_ALFA_NETWORK_N5Q)   &&\
     !defined(CONFIG_FOR_ENGENIUS_ENS202EXT) &&\
     !defined(CONFIG_FOR_GLINET_GL_AR300)    &&\
+    !defined(CONFIG_FOR_KISSLINK_NB1210)    &&\
     !defined(CONFIG_FOR_YUNCORE_CPE870)
 
 	#define CONFIG_UPG_UBOOT_SIZE_BACKUP_HEX	0x20000

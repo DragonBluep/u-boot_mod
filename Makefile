@@ -292,7 +292,8 @@ whqx_e600gac_v2 \
 zbtlink_zbt-we1526:
 	@$(call build,256,1,ETH_CONFIG=_s27)
 
-h3c_wap422:
+h3c_wap422 \
+kisslink_nb1210:
 	@$(call build,256,0,ETH_CONFIG=_s27)
 
 tp-link_tl-wdr3600_v1 \
