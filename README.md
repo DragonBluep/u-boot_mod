@@ -111,6 +111,7 @@ Currently supported devices:
   - GainStrong Oolite v5.2 (module and dev board)
   - GL.iNet GL-AR300M Lite
   - GL.iNet GL-AR750
+  - H3C WAP422
   - P&W CPE505N
   - P&W R602N
   - TP-Link TL-MR22U v1
@@ -158,6 +159,7 @@ More information about supported devices:
 | GL.iNet GL-AR300M Lite | QCA9531 | 16 MiB | 128 MiB DDR2 | 256 KiB | R/W |
 | GL.iNet GL-AR750 | QCA9531 | 16 MiB | 128 MiB DDR2 | 256 KiB | R/W |
 | GL.iNet GL-USB150 | AR9331 | 16 MiB | 64 MiB DDR2 | 256 KiB | R/W |
+| H3C WAP422 | QCA9531 | 16 MiB | 128 MiB DDR2 | 256 KiB | R/W |
 | Hak5 LAN Turtle | AR9331 | 16 MiB | 64 MiB DDR2 | 128 KiB | R/W |
 | Hak5 Packet Squirrel | AR9331 | 16 MiB | 64 MiB DDR2 | 128 KiB | R/W |
 | Hak5 WiFi Pineapple NANO | AR9331 | 16 MiB | 64 MiB DDR2 | 128 KiB | R/W |

@@ -541,6 +541,15 @@ gl-inet_gl-usb150: ar933x_common
 	@$(call define_add,CONFIG_FOR_GLINET_GL_USB150,1)
 	@$(MKCONFIG) -a ap121 mips mips ap121 ar7240 ar7240
 
+h3c_wap422: qca953x_common
+	@$(call config_init,H3C WAP422,wap422,16,3,1,QCA_QCA9531_SOC)
+	@$(call define_add,CONFIG_FOR_H3C_WAP422,1)
+	@$(call define_add,CONFIG_QCA_ETH_PHY_SWAP,1)
+	@$(call define_add,CFG_ATHRS27_PHY,1)
+	@$(call define_add,CFG_ATH_GMAC_NMACS,2)
+	@$(call define_add,CONFIG_PCI,1)
+	@$(MKCONFIG) -a ap143 mips mips ap143 ar7240 ar7240
+
 hak5_lan-turtle: ar933x_common
 	@$(call config_init,Hak5 LAN Turtle,lan-turtle,16,11,1,QCA_AR9331_SOC)
 	@$(call define_add,CONFIG_FOR_HAK5_LAN_TURTLE,1)
