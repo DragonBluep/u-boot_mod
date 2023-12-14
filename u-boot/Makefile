@@ -19,11 +19,12 @@ MKIMAGE  = $(BUILD_TOPDIR)/u-boot/tools/mkimage
 LZMA     = $(BUILD_TOPDIR)/host_util/lzma/lzma
 
 # Show in version string if we are not building from clean repository
-ifeq ($(ISREPODIRTY),1)
-  U_BOOT_VERSION = $(VERSION).$(PATCHLEVEL).$(SUBLEVEL)$(EXTRAVERSION)"-dirty"
-else
-  U_BOOT_VERSION = $(VERSION).$(PATCHLEVEL).$(SUBLEVEL)$(EXTRAVERSION)"-clean"
-endif
+# ifeq ($(ISREPODIRTY),1)
+#   U_BOOT_VERSION = $(VERSION).$(PATCHLEVEL).$(SUBLEVEL)$(EXTRAVERSION)"-dirty"
+# else
+#   U_BOOT_VERSION = $(VERSION).$(PATCHLEVEL).$(SUBLEVEL)$(EXTRAVERSION)"-clean"
+# endif
+U_BOOT_VERSION = $(VERSION).$(PATCHLEVEL).$(SUBLEVEL)
 
 # ===============================================================
 

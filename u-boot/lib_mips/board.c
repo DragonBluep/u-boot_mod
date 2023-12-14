@@ -98,7 +98,7 @@ static int display_banner(void)
 #endif
 
 	printf("\n***************************************"
-	       "\n*     %s     *"
+	       "\n*             %s            *"
 	       "\n*          Build: "
 	       MK_STR(CONFIG_BUILD_DATE_UTC) "          *"
 	       "\n***************************************\n\n",
