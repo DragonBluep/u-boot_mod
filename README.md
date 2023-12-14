@@ -115,6 +115,7 @@ Currently supported devices:
   - GL.iNet GL-AR750
   - H3C WAP422
   - LEMON WR-9531
+  - Letv LBA-047-CH
   - P&W CPE505N
   - P&W R602N
   - TP-Link TL-MR22U v1
@@ -169,6 +170,7 @@ More information about supported devices:
 | Kisslink NB1210 | AR9341 | 8 MiB | 64 MiB DDR | 256 KiB | R/W |
 | LEMON WR-9341 | AR9341 | 8 MiB | 64 MiB DDR2 | 256 KiB | R/W |
 | LEMON WR-9531 | QCA9531 | 16 MiB | 128 MiB DDR2 | 256 KiB | R/W |
+| Letv LBA-047-CH | QCA9531 | 16 MiB | 128 MiB DDR2 | 256 KiB | R/W |
 | P&W CPE505N | QCA9531 | 16 MiB | 64 MiB DDR2 | 256 KiB | R/W |
 | P&W R602N | QCA9531 | 16 MiB | 64 MiB DDR2 | 256 KiB | R/W |
 | [TP-Link TL-MR10U v1](http://wiki.openwrt.org/toh/tp-link/tl-mr10u) | AR9331 | 4 MiB | 32 MiB DDR1 | 64 KiB, LZMA | RO |

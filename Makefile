@@ -295,7 +295,8 @@ zbtlink_zbt-we1526:
 h3c_wap422 \
 kisslink_nb1210 \
 lemon_wr-9341 \
-lemon_wr-9531:
+lemon_wr-9531 \
+letv_lba-047-ch:
 	@$(call build,256,0,ETH_CONFIG=_s27)
 
 tp-link_tl-wdr3600_v1 \
