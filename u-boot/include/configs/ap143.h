@@ -71,6 +71,13 @@
 						GPIO15 | GPIO17
 	#define CONFIG_QCA_GPIO_MASK_OUT_INIT_H	GPIO12 | GPIO16
 
+#elif defined(CONFIG_FOR_LEMON_WR9531)
+
+	#define CONFIG_QCA_GPIO_MASK_LED_ACT_L	GPIO4 | GPIO13 | GPIO16
+	#define CONFIG_QCA_GPIO_MASK_IN		GPIO0 | GPIO1 | GPIO2 | GPIO3 |\
+						GPIO11 | GPIO14 | GPIO15 | GPIO17
+	#define CONFIG_QCA_GPIO_MASK_OUT_INIT_H	GPIO12
+
 #elif defined(CONFIG_FOR_P2W_CPE505N)
 
 	#define CONFIG_QCA_GPIO_MASK_LED_ACT_L	GPIO4  | GPIO11 | GPIO12 |\
@@ -238,7 +245,8 @@
 				"rootfstype=squashfs init=/sbin/init "\
 				"mtdparts=spi0.0:256k(u-boot)ro,64k(u-boot-env),64k(art)ro,16000k(firmware)"
 
-#elif defined(CONFIG_FOR_H3C_WAP422)
+#elif defined(CONFIG_FOR_H3C_WAP422)            ||\
+      defined(CONFIG_FOR_LEMON_WR9531)
 
 	#define CONFIG_BOOTARGS	"console=ttyS0,115200 root=31:02 "\
 				"rootfstype=jffs2,squashfs init=/sbin/init "\
@@ -336,6 +344,7 @@
 
 #elif defined(CONFIG_FOR_GLINET_GL_AR300M_LITE) ||\
       defined(CONFIG_FOR_H3C_WAP422)            ||\
+      defined(CONFIG_FOR_LEMON_WR9531)          ||\
       defined(CONFIG_FOR_P2W_CPE505N)           ||\
       defined(CONFIG_FOR_P2W_R602N)             ||\
       defined(CONFIG_FOR_WALLYS_DR531)          ||\
@@ -411,6 +420,7 @@
 #elif defined(CONFIG_FOR_GLINET_GL_AR300M_LITE) ||\
       defined(CONFIG_FOR_GLINET_GL_AR750)       ||\
       defined(CONFIG_FOR_H3C_WAP422)            ||\
+      defined(CONFIG_FOR_LEMON_WR9531)          ||\
       defined(CONFIG_FOR_WHQX_E600G_V2)         ||\
       defined(CONFIG_FOR_WHQX_E600GAC_V2)
 
@@ -469,6 +479,7 @@
 #elif defined(CONFIG_FOR_GAINSTRONG_OOLITE_V5_2)     ||\
       defined(CONFIG_FOR_GAINSTRONG_OOLITE_V5_2_DEV) ||\
       defined(CONFIG_FOR_GLINET_GL_AR300M_LITE)      ||\
+      defined(CONFIG_FOR_LEMON_WR9531)               ||\
       defined(CONFIG_FOR_P2W_CPE505N)                ||\
       defined(CONFIG_FOR_P2W_R602N)                  ||\
       defined(CONFIG_FOR_YUNCORE_AP90Q)              ||\
@@ -616,6 +627,7 @@
 #elif defined(CONFIG_FOR_GLINET_GL_AR300M_LITE) ||\
       defined(CONFIG_FOR_GLINET_GL_AR750)       ||\
       defined(CONFIG_FOR_H3C_WAP422)            ||\
+      defined(CONFIG_FOR_LEMON_WR9531)          ||\
       defined(CONFIG_FOR_P2W_CPE505N)           ||\
       defined(CONFIG_FOR_P2W_R602N)             ||\
       defined(CONFIG_FOR_WALLYS_DR531)          ||\
@@ -698,7 +710,8 @@
 	#define CONFIG_QCA_PLL_IN_FLASH_BLOCK_OFFSET	0x50000
 	#define CONFIG_QCA_PLL_IN_FLASH_BLOCK_SIZE	0x10000
 
-#elif defined(CONFIG_FOR_H3C_WAP422)
+#elif defined(CONFIG_FOR_H3C_WAP422)            ||\
+      defined(CONFIG_FOR_LEMON_WR9531)
 
 	#define CONFIG_QCA_PLL_IN_FLASH_BLOCK_OFFSET	0x30000
 	#define CONFIG_QCA_PLL_IN_FLASH_BLOCK_SIZE	0x10000
@@ -733,6 +746,7 @@
     !defined(CONFIG_FOR_GLINET_GL_AR300M_LITE) &&\
     !defined(CONFIG_FOR_GLINET_GL_AR750)       &&\
     !defined(CONFIG_FOR_H3C_WAP422)            &&\
+    !defined(CONFIG_FOR_LEMON_WR9531)          &&\
     !defined(CONFIG_FOR_P2W_CPE505N)           &&\
     !defined(CONFIG_FOR_P2W_R602N)             &&\
     !defined(CONFIG_FOR_WALLYS_DR531)          &&\
