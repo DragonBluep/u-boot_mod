@@ -226,6 +226,13 @@ void env_relocate(void)
 #endif
 
 		env_crc_update();
+
+		/* Reset and save env if it's invalid */
+		#if defined(CONFIG_CMD_ENV) && defined(CONFIG_CMD_FLASH)
+			printf_wrn("restore default env due to bad CRC!\n\n");
+			saveenv();
+		#endif
+
 		gd->env_valid = 1;
 	} else {
 		env_relocate_spec();
