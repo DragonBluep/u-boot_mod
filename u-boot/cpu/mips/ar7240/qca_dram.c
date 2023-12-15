@@ -496,7 +496,7 @@ static void qca_ddr_tap_tune(u32 ddr_width)
  *
  */
 #define DDRx_tMRD_ns	10
-#define DDRx_tRAS_ns	40
+#define DDRx_tRAS_ns	45
 #define DDRx_tRCD_ns	15
 #define DDRx_tRP_ns	15
 #define DDRx_tRRD_ns	10
@@ -548,6 +548,10 @@ static inline void qca_dram_set_ddr_cfg(u32 mem_cas,
 
 	/* CAS should be (2 * MEM_CAS) or (2 * MEM_CAS) + 1/2/3 */
 	tmp = 2 * mem_cas;
+	/* Use (2 * MEM_CAS) + 1 for DDR2 */
+	if(mem_type == RAM_MEMORY_TYPE_DDR2) {
+		tmp = tmp + 1;
+	}
 	tmp = (tmp << QCA_DDR_CFG_CAS_3LSB_SHIFT) & QCA_DDR_CFG_CAS_3LSB_MASK;
 	if (mem_cas > 3) {
 		tmp = tmp | QCA_DDR_CFG_CAS_MSB_MASK;
@@ -977,6 +981,16 @@ void qca_dram_init(void)
 
 	/* Enable DDR refresh and setup refresh period */
 	qca_dram_set_en_refresh();
+
+#define PMU1_ADDRESS	0x18116c40
+#define PMU2_ADDRESS	0x18116c44
+#if (SOC_TYPE & QCA_AR934X_SOC)
+	qca_soc_reg_write(PMU1_ADDRESS, 0x633c8176);
+	qca_soc_reg_write(PMU2_ADDRESS, 0x10380000);
+#elif (SOC_TYPE & QCA_QCA953X_SOC)
+	qca_soc_reg_write(PMU1_ADDRESS, 0x633C8178);
+	qca_soc_reg_write(PMU2_ADDRESS, 0x10200000);
+#endif
 
 	/*
 	 * At this point memory should be fully configured,
